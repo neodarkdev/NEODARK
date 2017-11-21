@@ -20,29 +20,6 @@ struct SeedSpec6 {
  
 #include "chainparamsseeds.h"
   
-  void MineGenesis(CBlock genesis){
-    // This will figure out a valid hash and Nonce if you're creating a different genesis block:
-    uint256 hashTarget = CBigNum().SetCompact(Params().ProofOfWorkLimit().GetCompact()).getuint256();
-    printf("Target: %s\n", hashTarget.GetHex().c_str());
-    uint256 newhash = genesis.GetHash();
-    uint256 besthash;
-    memset(&besthash,0xFF,32);
-    while (newhash > hashTarget) {
-    	++genesis.nNonce;
-        if (genesis.nNonce == 0){
-            printf("NONCE WRAPPED, incrementing time");
-            ++genesis.nTime;
-        }
-	newhash = genesis.GetHash();
-	if(newhash < besthash){
-	    besthash=newhash;
-	    printf("New best: %s\n", newhash.GetHex().c_str());
-	}
-    }
-    printf("Found Genesis, Nonce: %ld, Hash: %s\n", genesis.nNonce, genesis.GetHash().GetHex().c_str());
-    printf("Gensis Hash Merkle: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-}
-  
   
 //
 // Main network
@@ -95,13 +72,13 @@ public:
         genesis.nVersion = 1;
         genesis.nTime    = 1511260843;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 0;
+        genesis.nNonce   = 3434724;
  		
-		MineGenesis(genesis);
+				
         hashGenesisBlock = genesis.GetHash();
 		
-        assert(hashGenesisBlock == uint256("0x"));
-        assert(genesis.hashMerkleRoot == uint256("0x"));
+        assert(hashGenesisBlock == uint256("0x000009a1a7b59c74dbffaa5b5b9f28d58ce64016ac4fd89794d456c3c1122bff"));
+        assert(genesis.hashMerkleRoot == uint256("0xda85a651d99d7c4d1a49e8ad1a66df85cab6a849557f92a4e436e2ad33ba5740"));
  
 	   	vSeeds.push_back(CDNSSeedData("35.196.244.250", "104.196.115.204"));
  
