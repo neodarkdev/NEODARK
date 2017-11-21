@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Neodark
+Comment=Neodark P2P Cryptocurrency
+Comment[fr]=Neodark, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Neodark, eşten eşe kriptografik sanal para birimi
+Exec=/usr/bin/Neodark-qt
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/bitcoin80.xpm
+MimeType=x-scheme-handler/Neodark;
+Categories=Office;

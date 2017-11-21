@@ -1,0 +1,9 @@
+Building Neodark
+
+See doc/readme-qt.rst for instructions on building Neodark QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Neodark.
+
+See doc/build-*.txt for instructions on building Neodarkd,
+the intended-for-services, no-graphical-interface, reference
+implementation of Neodark.

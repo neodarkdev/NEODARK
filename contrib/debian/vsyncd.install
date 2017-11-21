@@ -1,0 +1,2 @@
+debian/bin/Neodarkd usr/bin
+src/Neodarkd usr/lib/Neodark
